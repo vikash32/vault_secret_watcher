@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-with-secret
+  name: nginx-with-secret
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-with-secret
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-with-secret
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
